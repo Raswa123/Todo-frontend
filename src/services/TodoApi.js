@@ -1,4 +1,5 @@
-const API_URL = "https://todo-backend-49fj.onrender.com/todos";
+const API_URL="http://localhost:3001/todos"
+
 export const getTodo=async()=>{
     const response=await fetch(API_URL);
 
