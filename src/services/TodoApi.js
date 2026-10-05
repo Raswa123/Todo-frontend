@@ -1,4 +1,3 @@
-const API_URL="http://localhost:3001/todos"
 
 export const getTodo=async()=>{
     const response=await fetch(API_URL);
