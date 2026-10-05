@@ -8,12 +8,13 @@ function Landing() {
   const [error, setError] = useState('')
   const [deletingId, setDeletingId] = useState(null)
 
-  useEffect(() => {
-    getTodo()
-      .then(setTodos)
-      .catch(() => setError('Could not load todo items.'))
-      .finally(() => setLoading(false))
-  }, [])
+ useEffect(() => {
+  getTodo()
+    .then((response) => setTodos(response.data))
+    .catch(() => setError('Could not load todo items.'))
+    .finally(() => setLoading(false))
+}, [])
+
 
   async function handleDelete(todo) {
     if (!window.confirm(`Delete "${todo.title}"?`)) return

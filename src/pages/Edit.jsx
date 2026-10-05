@@ -16,10 +16,10 @@ function Edit() {
     let active = true
 
     getTodoById(id)
-      .then((todo) => {
+      .then((response) => {
         if (!active) return
-        setTitle(todo.title)
-        setStatus(todo.status)
+        setTitle(response.data.title)
+        setStatus(response.data.status)
       })
       .catch(() => {
         if (active) setLoadError('Could not load this todo.')
@@ -103,7 +103,7 @@ function Edit() {
                     <button
                       className="btn btn-success"
                       type="submit"
-                      disabled={saving || !title.trim()}
+                      
                     >
                       {saving ? 'Saving...' : 'Save changes'}
                     </button>

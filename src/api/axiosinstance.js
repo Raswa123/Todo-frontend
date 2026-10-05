@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const axiosInstance = axios.create({
-    baseURL: "https://todo-backend-49fj.onrender.com/",
+    baseURL: "https://todo-backend-49fj.onrender.com",
     timeout: 5000
 });
 
